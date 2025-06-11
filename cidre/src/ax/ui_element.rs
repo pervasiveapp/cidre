@@ -111,6 +111,11 @@ impl UiElement {
         unsafe { AXUIElementPerformAction(self, action).result() }
     }
 
+    #[doc(alias = "AXUIElementSetAttributeValue")]
+    pub fn set_attr_value(&self, attr: &ax::Attr, value: &cf::Type) -> os::Result {
+        unsafe { AXUIElementSetAttributeValue(self, attr, value).result() }
+    }
+
     #[doc(alias = "AXUIElementCopyElementAtPosition")]
     pub fn element_at_pos(&self, x: f32, y: f32) -> os::Result<arc::R<Self>> {
         unsafe { os::result_unchecked(|res| AXUIElementCopyElementAtPosition(self, x, y, res)) }
@@ -392,6 +397,12 @@ unsafe extern "C-unwind" {
         elem: &UiElement,
         attr: &ax::Attr,
         val: *mut bool,
+    ) -> ax::Error;
+
+    fn AXUIElementSetAttributeValue(
+        elem: &UiElement,
+        attr: &ax::Attr,
+        value: &cf::Type,
     ) -> ax::Error;
 
     fn AXTextMarkerGetTypeID() -> cf::TypeId;

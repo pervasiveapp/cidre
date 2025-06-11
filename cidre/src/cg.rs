@@ -14,7 +14,24 @@ mod color;
 pub use color::Color;
 
 mod window;
+pub use window::copy_window_info;
+pub use window::kCGWindowAlpha;
+pub use window::kCGWindowBackingLocationVideoMemory;
+pub use window::kCGWindowBounds;
+pub use window::kCGWindowIsOnscreen;
+pub use window::kCGWindowLayer;
+pub use window::kCGWindowName;
+pub use window::kCGWindowNumber;
+pub use window::kCGWindowOwnerName;
+pub use window::kCGWindowOwnerPID;
 pub use window::Id as WindowId;
+pub use window::ListOption as WindowListOption;
+pub use window::LIST_OPTION_ALL as WINDOW_LIST_OPTION_ALL;
+pub use window::LIST_OPTION_EXCLUDE_DESKTOP_ELEMENTS as WINDOW_LIST_OPTION_EXCLUDE_DESKTOP_ELEMENTS;
+pub use window::LIST_OPTION_INCLUDING_WINDOW as WINDOW_LIST_OPTION_INCLUDING_WINDOW;
+pub use window::LIST_OPTION_ON_SCREEN_ABOVE_WINDOW as WINDOW_LIST_OPTION_ON_SCREEN_ABOVE_WINDOW;
+pub use window::LIST_OPTION_ON_SCREEN_BELOW_WINDOW as WINDOW_LIST_OPTION_ON_SCREEN_BELOW_WINDOW;
+pub use window::LIST_OPTION_ON_SCREEN_ONLY as WINDOW_LIST_OPTION_ON_SCREEN_ONLY;
 
 mod window_level;
 pub use window_level::WindowLevel;
@@ -50,14 +67,6 @@ pub use event_types::*;
 
 pub mod image;
 #[cfg(feature = "iio")]
-pub use image::AnimationBlock as ImageAnimationBlock;
-#[cfg(feature = "iio")]
-pub use image::AnimationOptKey as ImageAnimationOptKey;
-#[cfg(feature = "iio")]
-pub use image::ImageDst;
-#[cfg(feature = "iio")]
-pub use image::ImageSrc;
-#[cfg(feature = "iio")]
 pub use image::animate_image_at_url;
 #[cfg(feature = "iio")]
 pub use image::animate_image_at_url_with_block;
@@ -67,6 +76,14 @@ pub use image::animate_image_data;
 pub use image::animate_image_data_with_block;
 #[cfg(feature = "iio")]
 pub use image::animation_err as image_animation_err;
+#[cfg(feature = "iio")]
+pub use image::AnimationBlock as ImageAnimationBlock;
+#[cfg(feature = "iio")]
+pub use image::AnimationOptKey as ImageAnimationOptKey;
+#[cfg(feature = "iio")]
+pub use image::ImageDst;
+#[cfg(feature = "iio")]
+pub use image::ImageSrc;
 
 pub use image::AlphaInfo as ImageAlphaInfo;
 pub use image::Image;

@@ -1,4 +1,4 @@
-use crate::{arc, ca, define_obj_type, ns, objc};
+use crate::{arc, ca, cg, define_obj_type, ns, objc};
 
 define_obj_type!(
     pub Screen(ns::Id),
@@ -39,6 +39,10 @@ impl Screen {
     #[objc::msg_send(safeAreaInsets)]
     #[objc::available(macos = 12.0)]
     pub fn safe_area_insets(&self) -> ns::EdgeInsets;
+
+    /// The backing store scale factor for the screen
+    #[objc::msg_send(backingScaleFactor)]
+    pub fn backing_scale_factor(&self) -> cg::Float;
 }
 
 /// Variable Rate Refresh
