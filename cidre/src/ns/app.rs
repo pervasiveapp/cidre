@@ -82,6 +82,9 @@ mod paragraph_style;
 pub use paragraph_style::LineBreakMode;
 pub use paragraph_style::LineBreakStrategy;
 
+mod pasteboard;
+pub use pasteboard::Pasteboard;
+
 mod responder;
 pub use responder::Responder;
 

@@ -35,12 +35,26 @@ unsafe extern "C" {
         option: ListOption,
         relative_to_window: Id,
     ) -> Option<arc::R<cf::ArrayOf<cf::Dictionary>>>;
+
+    #[doc(alias = "CGWindowListCreate")]
+    #[link_name = "CGWindowListCreate"]
+    pub fn list_create(
+        option: ListOption,
+        relative_to_window: Id,
+    ) -> Option<arc::R<cf::ArrayOf<cf::Number>>>;
 }
 
-// Convenience wrapper function
+// Convenience wrapper functions
 pub fn copy_window_info(
     option: ListOption,
     relative_to_window: Id,
 ) -> Option<arc::R<cf::ArrayOf<cf::Dictionary>>> {
     unsafe { list_copy_window_info(option, relative_to_window) }
+}
+
+pub fn create_window_list(
+    option: ListOption,
+    relative_to_window: Id,
+) -> Option<arc::R<cf::ArrayOf<cf::Number>>> {
+    unsafe { list_create(option, relative_to_window) }
 }

@@ -55,14 +55,14 @@ pub use codec::quality as codec_quality;
 pub use codec::BitRateControlMode as CodecBitRateControlMode;
 pub use codec::Codec;
 pub use codec::CodecRef;
+pub use codec::DECODER_COMPONENT_TYPE;
 pub use codec::DynamicRangeCompressionProfile;
+pub use codec::ENCODER_COMPONENT_TYPE;
 pub use codec::GlobalPropId as CodecGlobalPropId;
 pub use codec::InstancePropId as CodecInstancePropId;
 pub use codec::MagicCookieInfo as CodecMagicCookieInfo;
 pub use codec::ProduceOutputPacketStatus as CodecProduceOutputPacketStatus;
 pub use codec::ProgramTargetLevel;
-pub use codec::DECODER_COMPONENT_TYPE;
-pub use codec::ENCODER_COMPONENT_TYPE;
 pub use codec::UNITY_CODEC_COMPONENT_TYPE;
 
 mod queue;

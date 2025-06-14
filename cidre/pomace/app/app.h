@@ -34,6 +34,7 @@ Class NS_FONT;
 Class NS_FONT_MANAGER;
 Class NS_GESTURE_RECOGNIZER;
 Class NS_STATUS_BAR;
+Class NS_PASTEBOARD;
 
 __attribute__((constructor))
 static void app_initializer(void)
@@ -71,6 +72,7 @@ static void app_initializer(void)
         NS_FONT_MANAGER = [NSFontManager class];
         NS_GESTURE_RECOGNIZER = [NSGestureRecognizer class];
         NS_STATUS_BAR = [NSStatusBar class];
+        NS_PASTEBOARD = [NSPasteboard class];
     }
 }
 

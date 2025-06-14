@@ -276,6 +276,23 @@ pub mod access {
     }
 }
 
+pub mod cursor {
+    use crate::cg;
+
+    /// Get the current mouse cursor location in global coordinates
+    /// Uses Core Graphics Display Services to get the cursor position
+    pub fn location() -> cg::Point {
+        unsafe { 
+            CGGetGlobalMouseLocation()
+        }
+    }
+
+    #[link(name = "CoreGraphics", kind = "framework")]
+    unsafe extern "C-unwind" {
+        fn CGGetGlobalMouseLocation() -> cg::Point;
+    }
+}
+
 #[link(name = "CoreGraphics", kind = "framework")]
 unsafe extern "C-unwind" {
     fn CGEventGetTypeID() -> cf::TypeId;
