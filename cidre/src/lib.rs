@@ -1,8 +1,8 @@
 #![allow(
-    mismatched_lifetime_syntaxes,  // 77 lifetime syntax warnings
+    // mismatched_lifetime_syntaxes,  // 77 lifetime syntax warnings
     non_snake_case,                // 15 naming convention warnings  
     dead_code,                     // unused struct warnings
-    unnecessary_transmutes         // 6 unnecessary transmute warnings
+    // unnecessary_transmutes         // 6 unnecessary transmute warnings
 )]
 
 pub mod mac_types;
@@ -146,6 +146,11 @@ pub mod nw;
 pub mod objc;
 
 pub mod os;
+
+/// PhotoKit
+#[cfg(feature = "ph")]
+pub mod ph;
+
 pub mod sys;
 
 /// Security

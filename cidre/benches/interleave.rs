@@ -4,7 +4,7 @@ use cidre::{
     at::{self, au, audio},
     av, os, vdsp,
 };
-use criterion::{criterion_group, criterion_main, Criterion};
+use criterion::{Criterion, criterion_group, criterion_main};
 
 const N: usize = 1024;
 pub fn criterion_benchmark(c: &mut Criterion) {

@@ -83,6 +83,9 @@ impl Url {
     #[objc::msg_send(absoluteString)]
     pub fn abs_string(&self) -> Option<arc::R<ns::String>>;
 
+    #[objc::msg_send(path)]
+    pub fn path(&self) -> Option<arc::R<ns::String>>;
+
     #[objc::msg_send(resourceValuesForKeys:error:)]
     pub unsafe fn res_values_for_keys_err<'ear>(
         &self,

@@ -347,6 +347,27 @@ fn main() {
         add_xc_target_args_from_features(&mut xc_target_args, &["core_audio"]);
     }
 
+    // PhotoKit support - available on iOS, macOS, and tvOS
+    if env::var_os("CARGO_FEATURE_PH").is_some() {
+        if sdk == "macosx"
+            || sdk == "maccatalyst"
+            || sdk == "iphoneos"
+            || sdk == "iphonesimulator"
+            || sdk == "appletvos"
+            || sdk == "appletvsimulator"
+        {
+            println!("cargo:rerun-if-changed=ph.m");
+            println!("cargo:rustc-link-lib=framework=Photos");
+
+            // Compile ph.m to static library
+            cc::Build::new()
+                .file("ph.m")
+                .flag("-fmodules")
+                .flag("-fobjc-arc")
+                .compile("ph");
+        }
+    }
+
     println!("cargo:rerun-if-changed=./pomace/");
     xc_build(&xc_target_args, sdk, arch, configuration, &versions);
 }

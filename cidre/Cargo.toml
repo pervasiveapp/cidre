@@ -57,6 +57,7 @@ full = [
   "io_surface",
   "io_kit",
   "nw",
+  "ph",
   "core_motion",
   "core_audio",
   "compression",
@@ -105,6 +106,7 @@ iio = ["cg", "blocks"]
 objc = []
 ns = ["objc", "cg"]
 nl = ["ns"]
+ph = ["ns"]
 vt = ["cf", "cv", "cg", "cm"]
 io_surface = ["cf"]
 io_kit = []
@@ -327,3 +329,6 @@ required-features = ["custom-allocator"]
 
 [package.metadata.playground]
 features = ["full"]
+
+[build-dependencies]
+cc = "1.0"

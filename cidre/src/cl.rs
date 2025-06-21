@@ -18,7 +18,6 @@ pub use location_manager::DelegateImpl as LocationManagerDelegateImpl;
 pub use location_manager::LocationManager;
 
 mod location;
-pub use location::accuracy as location_accuracy;
 pub use location::Accuracy as LocationAccuracy;
 pub use location::Coordinate2d as LocationCoordinate2d;
 pub use location::Degrees as LocationDegrees;
@@ -30,6 +29,7 @@ pub use location::Location;
 pub use location::Speed as LocationSpeed;
 pub use location::SpeedAccuracy as LocationSpeedAccuracy;
 pub use location::SrcInfo as LocationSrcInfo;
+pub use location::accuracy as location_accuracy;
 
 mod heading;
 pub use heading::Heading;

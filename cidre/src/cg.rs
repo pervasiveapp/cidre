@@ -14,12 +14,16 @@ mod color;
 pub use color::Color;
 
 mod window;
+pub use window::Id as WindowId;
 pub use window::LIST_OPTION_ALL as WINDOW_LIST_OPTION_ALL;
 pub use window::LIST_OPTION_EXCLUDE_DESKTOP_ELEMENTS as WINDOW_LIST_OPTION_EXCLUDE_DESKTOP_ELEMENTS;
 pub use window::LIST_OPTION_INCLUDING_WINDOW as WINDOW_LIST_OPTION_INCLUDING_WINDOW;
 pub use window::LIST_OPTION_ON_SCREEN_ABOVE_WINDOW as WINDOW_LIST_OPTION_ON_SCREEN_ABOVE_WINDOW;
 pub use window::LIST_OPTION_ON_SCREEN_BELOW_WINDOW as WINDOW_LIST_OPTION_ON_SCREEN_BELOW_WINDOW;
 pub use window::LIST_OPTION_ON_SCREEN_ONLY as WINDOW_LIST_OPTION_ON_SCREEN_ONLY;
+pub use window::ListOption as WindowListOption;
+pub use window::copy_window_info;
+pub use window::create_window_list;
 pub use window::kCGWindowAlpha;
 pub use window::kCGWindowBackingLocationVideoMemory;
 pub use window::kCGWindowBounds;
@@ -29,10 +33,6 @@ pub use window::kCGWindowName;
 pub use window::kCGWindowNumber;
 pub use window::kCGWindowOwnerName;
 pub use window::kCGWindowOwnerPID;
-pub use window::copy_window_info;
-pub use window::create_window_list;
-pub use window::Id as WindowId;
-pub use window::ListOption as WindowListOption;
 
 mod window_level;
 pub use window_level::WindowLevel;
